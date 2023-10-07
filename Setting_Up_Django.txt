@@ -1,0 +1,107 @@
+How to Set Up Our Environment And Start A Django Project And APP On Terminal
+
+--> Creating a Django-DB folder in which I'm gonna start our Django project later on...
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho (main)
+$ mkdir Django-DB
+
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho (main)
+$ cd Django-DB
+
+--> Creating the virtual environment called 'virtual_env'...
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ python -m venv virtual_env
+
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ ls
+virtual_env/
+
+--> Activating the virtual environment
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ source virtual_env/Scripts/activate
+
+--> Now inside our virtual environment let's install Django...
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ pip install django
+Collecting django
+  Obtaining dependency information for django from https://files.pythonhosted.org/packages/b9/45/707dfc56f381222c1c798503546cb390934ab246fc45b5051ef66e31099c/Django-4.2.6-py3-none-any.whl.metadata
+  Using cached Django-4.2.6-py3-none-any.whl.metadata (4.1 kB)
+Collecting asgiref<4,>=3.6.0 (from django)
+  Obtaining dependency information for asgiref<4,>=3.6.0 from https://files.pythonhosted.org/packages/9b/80/b9051a4a07ad231558fcd8ffc89232711b4e618c15cb7a392a17384bbeef/asgiref-3.7.2-py3-none-any.whl.metadata
+  Using cached asgiref-3.7.2-py3-none-any.whl.metadata (9.2 kB)
+Collecting sqlparse>=0.3.1 (from django)
+  Using cached sqlparse-0.4.4-py3-none-any.whl (41 kB)
+Collecting tzdata (from django)
+  Using cached tzdata-2023.3-py2.py3-none-any.whl (341 kB)
+Using cached Django-4.2.6-py3-none-any.whl (8.0 MB)
+Using cached asgiref-3.7.2-py3-none-any.whl (24 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.7.2 django-4.2.6 sqlparse-0.4.4 tzdata-2023.3
+
+--> Checking if Django was installed correctly...
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ pip freeze
+asgiref==3.7.2
+Django==4.2.6
+sqlparse==0.4.4
+tzdata==2023.3
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ django-admin
+
+Type 'django-admin help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[django]
+    check
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    makemessages
+    makemigrations
+    migrate
+    optimizemigration
+    runserver
+    sendtestemail
+    shell
+    showmigrations
+    sqlflush
+    sqlmigrate
+    sqlsequencereset
+    squashmigrations
+    startapp
+    startproject
+    test
+    testserver
+Note that only Django core commands are listed as settings are not properly configured (error: Requested setting INSTALLED_APPS, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.).
+
+--> Starting a Django project called 'Django-DB'...
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ django-admin startproject Django_DB
+
+--> Accessing the project...
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB (main)
+$ cd Django_DB
+
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB/Django_DB (main)
+$ ls
+Django_DB/  manage.py*
+
+--> Starting app called 'website'...
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB/Django_DB (main)
+$ python manage.py startapp website
+(virtual_env)
+DELL@DESKTOP-S6QPSHO MINGW64 ~/OneDrive/Área de Trabalho/Django-DB/Django_DB (main)
+$ ls
+Django_DB/  manage.py*  website/

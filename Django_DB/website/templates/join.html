@@ -5,6 +5,7 @@
     <br/>
     <!-- Adding the method POST to the form, sending 'action' to our function join -->
     <form method="POST" action="{% url 'join' %}">
+        {% csrf_token %} 
         <!-- First Name div -->
         <div class="mb-3">
             <input type="text" class="form-control" id="fname" name="fname" 

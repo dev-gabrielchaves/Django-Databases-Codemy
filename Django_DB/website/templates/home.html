@@ -1,10 +1,15 @@
-<h1>Home Page!</h1>
 
-<!-- Iterating through all object list -->
-<hr>
-{% for object in all %}
-    <strong>{{ object.fname }} {{ object.lname }}</strong><br/>
-    Email: {{ object.email }}<br/>
-    Age: {{ object.age }}<br/>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Home Page!</h1>
+
+    <!-- Here below we are pulling the data out of our database -->
+    <!-- Iterating through all object list -->
+    <hr>
+    {% for object in all %}
+        <strong>{{ object.fname }} {{ object.lname }}</strong><br/>
+        Email: {{ object.email }}<br/>
+        Age: {{ object.age }}<br/>
     <hr>
 {% endfor %}
+{% endblock %}

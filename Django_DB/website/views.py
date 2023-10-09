@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Member
 from .forms import Memberform
+from django.contrib import messages
 
 def home(request):
 #   This is will sign everything that is in our database into this variable...
@@ -14,6 +15,7 @@ def join(request):
         form = Memberform(request.POST or None)
         if form.is_valid():
             form.save()
-        return render(request, 'join.html', {})        
+            messages.success(request, ('Form Submitted!'))
+        return redirect('home')        
     else:
         return render(request, 'join.html', {})
